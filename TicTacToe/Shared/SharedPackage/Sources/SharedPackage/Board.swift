@@ -7,7 +7,7 @@ final class Board: ObservableObject {
     @Published private(set) var winner: Square.OccupiedBy
     
     let squares: [[Square]]
-    private let flatSquares: [Square]
+    let flatSquares: [Square]
     
     /// This matrix is used to find indexes to check all
     /// possible wining combinations
