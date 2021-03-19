@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 final class Square: Equatable, CustomStringConvertible, ObservableObject {
-    static let empty = "     "
+    static let empty = "\(spacing) \(spacing)"
     static let spacing = "  "
 
     static func == (lhs: Square, rhs: Square) -> Bool {

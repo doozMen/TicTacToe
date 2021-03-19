@@ -10,7 +10,7 @@ struct SquareView: View {
         Button(action: {
             self.action()
         }) {
-            Text(square.text)
+            Text(square.text).frame(minWidth: 44)
         }
     }
 }
