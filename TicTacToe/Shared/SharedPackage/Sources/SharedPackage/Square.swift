@@ -2,6 +2,8 @@ import Foundation
 import Combine
 
 final class Square: Equatable, CustomStringConvertible, ObservableObject {
+    static let empty = "     "
+
     static func == (lhs: Square, rhs: Square) -> Bool {
         lhs.occupiedBy == rhs.occupiedBy
     }

@@ -8,8 +8,13 @@ class SquareTests: XCTestCase {
         super.setUp()
         square = .init(.nobody)
     }
+    
     func test_init() {
         XCTAssertEqual(square.occupiedBy, .nobody)
+    }
+    
+    func test_text() {
+        XCTAssertEqual(square.text, Square.empty)
     }
     
     func test_bindable_status() {
