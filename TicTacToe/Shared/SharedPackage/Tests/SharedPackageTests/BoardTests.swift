@@ -118,8 +118,16 @@ final class BoardTests: XCTestCase {
     
     func test_visitor_random_move() throws {
         XCTAssertFalse(board.isStarted)
-        try board.visitorRandomMove()
+        board.visitorRandomMove()
         XCTAssertTrue(board.isStarted)
+    }
+    
+    func test_visitor_random_move_different_every_time() throws {
+        let indexPath = board.visitorRandomMove()
+        XCTAssertTrue(board.isStarted)
+        let indexPath2 = board.visitorRandomMove()
+        
+        XCTAssertNotEqual(indexPath, indexPath2)
     }
     
     // MARK: - Winners
