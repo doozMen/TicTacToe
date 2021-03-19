@@ -66,14 +66,16 @@ final class Board: ObservableObject {
         }
         squares[indexPath.section][indexPath.item].occupiedBy = player
         
+        checkGameStatus()
+
+        guard !isGameover else { return }
+        
         switch mode {
             case .multiplayer:
                 break
             case .ai:
                 visitorRandomMove()
         }
-        
-        checkGameStatus()
     }
     
     func isOccupied(at indexPath: IndexPath) -> Bool {
