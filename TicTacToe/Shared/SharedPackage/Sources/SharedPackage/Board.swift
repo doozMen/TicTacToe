@@ -53,7 +53,8 @@ final class Board: ObservableObject {
     func resetGame() throws {
         for section in 0...2 {
             for item  in 0...2 {
-                try occupy(at: .init(item: item, section: section), with: .nobody)
+                squares[section][item].occupiedBy = .nobody
+                checkGameStatus()
             }
         }
         checkGameStatus()
@@ -86,6 +87,7 @@ final class Board: ObservableObject {
     }
     
     // MARK: - Private
+    
     
     private func checkForWinner() -> Square.OccupiedBy {
         let candidates: [Square.OccupiedBy] = [.home, .visitor]
