@@ -16,7 +16,7 @@ final class Square: Equatable, CustomStringConvertible, ObservableObject {
         didSet {
             switch occupiedBy {
                 case .nobody:
-                    text = "nobody"
+                    text = Square.empty
                 case .visitor:
                     text = "v"
                 case .home:
@@ -28,7 +28,7 @@ final class Square: Equatable, CustomStringConvertible, ObservableObject {
     
     init(_ ownedBy: OccupiedBy) {
         self.occupiedBy = ownedBy
-        self.text = "nobody"
+        self.text = Square.empty
     }
     
     var description: String {
