@@ -1,12 +1,21 @@
 import Foundation
+import SwiftUI
 import Combine
 
-struct Square: Equatable {
+final class Square: Equatable {
+    static func == (lhs: Square, rhs: Square) -> Bool {
+        lhs.ownedBy == rhs.ownedBy
+    }
+    
     enum OccupiedBy: Equatable {
         case nobody, visitor, home
     }
     
-    let status: OccupiedBy
+    @Published var ownedBy: OccupiedBy
+    
+    init(_ ownedBy: OccupiedBy) {
+        self.ownedBy = ownedBy
+    }
     
 }
 

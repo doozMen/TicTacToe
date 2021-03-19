@@ -9,13 +9,24 @@ import XCTest
 @testable import SharedPackage
 
 class SquareTests: XCTestCase {
+    var square: Square!
 
+    override func setUp() {
+        super.setUp()
+        square = .init(.nobody)
+    }
     func test_init() {
-        let square = Square(status: .nobody)
-        XCTAssertEqual(square.status, .nobody)
+        XCTAssertEqual(square.ownedBy, .nobody)
     }
     
     func test_bindable_status() {
-        XCTFail()
+        var result = [Square.OccupiedBy]()
+        let cancellable = square
+            .$ownedBy
+            .collect(2)
+            .sink { result = $0}
+        square.ownedBy = .home
+        cancellable.cancel()
+        XCTAssertEqual(result, [.nobody, .home])
     }
 }
