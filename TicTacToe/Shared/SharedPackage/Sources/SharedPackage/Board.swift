@@ -34,7 +34,10 @@ final class Board: ObservableObject {
         self.flatSquares = squares.flatMap { $0 }
     }
     
-    func occupy(at indexPath: IndexPath, with player: Square.OccupiedBy) {
+    func occupy(at indexPath: IndexPath, with player: Square.OccupiedBy) throws {
+        guard indexPath.item < 3, indexPath.section < 3 else {
+            throw Error.invalid(indexPath: indexPath, function: #function, filePath: #filePath)
+        }
         squares[indexPath.section][indexPath.item].occupiedBy = player
         checkGameStatus()
     }
@@ -43,13 +46,32 @@ final class Board: ObservableObject {
         return squares[indexPath.section][indexPath.item].occupiedBy != .nobody
     }
     
-    func resetGame() {
+    func resetGame() throws {
         for section in 0...2 {
             for item  in 0...2 {
-                occupy(at: .init(item: item, section: section), with: .nobody)
+                try occupy(at: .init(item: item, section: section), with: .nobody)
             }
         }
         checkGameStatus()
+    }
+    
+    // MARK: - Error
+    
+    enum Error: Swift.Error, CustomStringConvertible {
+        case invalid(indexPath: IndexPath, function: String, filePath: String)
+        
+        var description: String {
+            switch self {
+                case .invalid(indexPath: let indexPath, function: let function, filePath: let filePath):
+                    return """
+                        Invalid indexPath: (\(indexPath.section), \(indexPath.item))
+                            function: \(function)
+                            filePath: \(filePath)
+
+                        \(Board.self) is only 3x3 big!
+                        """
+            }
+        }
     }
     
     // MARK: - Private

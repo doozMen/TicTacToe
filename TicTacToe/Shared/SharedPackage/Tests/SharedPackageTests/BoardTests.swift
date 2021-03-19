@@ -18,23 +18,23 @@ final class BoardTests: XCTestCase {
         XCTAssertFalse(board.isStarted)
     }
     
-    func test_board_started() {
-        board.occupy(at: .init(item: 0, section: 1), with: .home)
+    func test_board_started() throws {
+        try board.occupy(at: .init(item: 0, section: 1), with: .home)
         
         XCTAssertTrue(board.isStarted)
     }
     
-    func test_board_reset() {
-        board.occupy(at: .init(item: 0, section: 1), with: .home)
+    func test_board_reset() throws {
+        try board.occupy(at: .init(item: 0, section: 1), with: .home)
         XCTAssertTrue(board.isStarted)
-        board.resetGame()
+        try board.resetGame()
         
         XCTAssertFalse(board.isStarted)
         XCTAssertFalse(board.isGameover)
     }
     
-    func test_out_of_bounds_occupy() {
-        XCTAssertThrowsError(board.occupy(at: .init(item: 9, section: 9), with: .home))
+    func test_out_of_bounds_occupy() throws {
+        XCTAssertThrowsError(try board.occupy(at: .init(item: 9, section: 9), with: .home))
     }
     
     func test_do_not_allow_to_change_occupied_square() {
@@ -43,9 +43,9 @@ final class BoardTests: XCTestCase {
     
     // MARK: - Occupied
     
-    func test_square_occupied() {
+    func test_square_occupied() throws {
         let indexPath = IndexPath(item: 0, section: 0)
-        board.occupy(at: indexPath, with: .home)
+        try board.occupy(at: indexPath, with: .home)
         XCTAssertTrue(board.isOccupied(at: indexPath))
     }
     
@@ -68,7 +68,7 @@ final class BoardTests: XCTestCase {
         let indexRows: [[IndexPath]] = [row, row, row]
         for row in indexRows {
             for indexPath in row {
-                board.occupy(at: indexPath, with: .home)
+                try board.occupy(at: indexPath, with: .home)
             }
         }
 
@@ -96,7 +96,7 @@ final class BoardTests: XCTestCase {
         let indexRows: [[IndexPath]] = [row, row, row]
         for row in indexRows {
             for indexPath in row where indexPath.item != 0 && indexPath.section != 0 {
-                board.occupy(at: indexPath, with: .home)
+                try board.occupy(at: indexPath, with: .home)
             }
         }
         
@@ -109,58 +109,58 @@ final class BoardTests: XCTestCase {
     
     // MARK: - Winners
     
-    func test_check_winner_rows() {
+    func test_check_winner_rows() throws {
         XCTAssertEqual(board.winner, .nobody)
         let candidates: [Square.OccupiedBy] = [.home, .visitor]
 
         for candidate in candidates {
             for row in 0..<3 {
-                board.occupy(at: .init(item: 0, section: row), with: candidate)
-                board.occupy(at: .init(item: 1, section: row), with: candidate)
-                board.occupy(at: .init(item: 2, section: row), with: candidate)
+                try board.occupy(at: .init(item: 0, section: row), with: candidate)
+                try board.occupy(at: .init(item: 1, section: row), with: candidate)
+                try board.occupy(at: .init(item: 2, section: row), with: candidate)
                 
                 XCTAssertEqual(board.winner, candidate)
-                board.resetGame()
+                try board.resetGame()
             }
         }
     }
     
-    func test_check_winner_columns() {
+    func test_check_winner_columns() throws {
         XCTAssertEqual(board.winner, .nobody)
         let candidates: [Square.OccupiedBy] = [.home, .visitor]
         
         for candidate in candidates {
             for column in 0..<3 {
-                board.occupy(at: .init(item: column, section: 0), with: candidate)
-                board.occupy(at: .init(item: column, section: 1), with: candidate)
-                board.occupy(at: .init(item: column, section: 2), with: candidate)
+                try board.occupy(at: .init(item: column, section: 0), with: candidate)
+                try board.occupy(at: .init(item: column, section: 1), with: candidate)
+                try board.occupy(at: .init(item: column, section: 2), with: candidate)
                 
                 XCTAssertEqual(board.winner, candidate)
-                board.resetGame()
+                try board.resetGame()
             }
         }
     }
     
-    func test_check_winner_diagonals() {
+    func test_check_winner_diagonals() throws {
         XCTAssertEqual(board.winner, .nobody)
         let candidates: [Square.OccupiedBy] = [.home, .visitor]
         
         for candidate in candidates {
-            board.occupy(at: .init(item: 0, section: 0), with: candidate)
-            board.occupy(at: .init(item: 1, section: 1), with: candidate)
-            board.occupy(at: .init(item: 2, section: 2), with: candidate)
+            try board.occupy(at: .init(item: 0, section: 0), with: candidate)
+            try board.occupy(at: .init(item: 1, section: 1), with: candidate)
+            try board.occupy(at: .init(item: 2, section: 2), with: candidate)
             
             XCTAssertEqual(board.winner, candidate)
-            board.resetGame()
+            try board.resetGame()
         }
         
         for candidate in candidates {
-            board.occupy(at: .init(item: 2, section: 0), with: candidate)
-            board.occupy(at: .init(item: 1, section: 1), with: candidate)
-            board.occupy(at: .init(item: 0, section: 2), with: candidate)
+            try board.occupy(at: .init(item: 2, section: 0), with: candidate)
+            try board.occupy(at: .init(item: 1, section: 1), with: candidate)
+            try board.occupy(at: .init(item: 0, section: 2), with: candidate)
             
             XCTAssertEqual(board.winner, candidate)
-            board.resetGame()
+            try board.resetGame()
         }
     }
     
