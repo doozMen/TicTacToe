@@ -18,10 +18,9 @@ struct SquareView: View {
 struct SquareView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            SquareView(square: .init(.home), action: {
-                
-            })
-            SquareView(square: .init(.nobody), action: {})
+            SquareView(square: .init(.home), action: { print("home pressed")})
+            SquareView(square: .init(.nobody), action: {print("nobody pressed")})
+            SquareView(square: .init(.visitor), action: {print("visitor pressed")})
         }
     }
 }
