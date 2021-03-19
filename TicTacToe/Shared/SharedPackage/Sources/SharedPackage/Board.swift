@@ -4,8 +4,8 @@ import Combine
 final class Board: ObservableObject {
     private let squares: [[Square]]
     
-    @Published var isGameover: Bool
-    @Published var isStarted: Bool
+    @Published private(set) var isGameover: Bool
+    @Published private(set) var isStarted: Bool
         
     init() {
         self.squares = [
@@ -19,17 +19,15 @@ final class Board: ObservableObject {
     
     
     func occupy(at indexPath: IndexPath, with player: Square.OccupiedBy) {
-        
+        squares[indexPath.item][indexPath.section].occupiedBy = player
+        checkGameStatus()
     }
     
     private func checkGameStatus() {
         guard !isGameover else { return }
         
         let flatSquares: [Square] = squares.flatMap { $0 }
-        let unOccupied = flatSquares.first { $0.occupiedBy != .nobody }
-        
-        if unOccupied == nil {
-            isGameover = true
-        }
+        isGameover = flatSquares.first { $0.occupiedBy == .nobody } != nil
+        isStarted = flatSquares.contains(.init(.home)) || flatSquares.contains(.init(.visitor))
     }
 }

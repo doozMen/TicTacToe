@@ -33,24 +33,24 @@ final class BoardTests: XCTestCase {
 //                result = isGameOver
 //                callCount += 1
 //            }
-//        
+//
 //        XCTAssertFalse(result, "initially the game should be ongoing")
-//        
+//
 //        for i in 0...8 {
 //            board.squares[i].occupiedBy = .home
 //        }
-//        
+//
 //        XCTAssertEqual(
 //            board.squares.map(\.occupiedBy),
 //            [.home, .home, .home, .home, .home, .home, .home, .home, .home]
 //        )
-//        
+//
 //        XCTAssertEqual(callCount, 2)
-//        
+//
 //        XCTAssertTrue(result, "A game ends if there are no more boxes available or if one of the two players align three symbols before the other.")
 //        cancelable.cancel()
 //    }
-//    
+//
 //    func test_board_almost_gameover() throws {
 //        var result = false
 //        let cancelable = board
@@ -58,13 +58,13 @@ final class BoardTests: XCTestCase {
 //            .sink { isGameOver in
 //                result = isGameOver
 //            }
-//        
+//
 //        XCTAssertFalse(result, "initially the game should be ongoing")
-//        
+//
 //        for i in 0...1 {
 //            board.squares[i].occupiedBy = .home
 //        }
-//        
+//
 //        XCTAssertEqual(
 //            board.squares.map(\.occupiedBy),
 //            [.home, .home, .nobody, .nobody, .nobody, .nobody, .nobody, .nobody, .nobody]
