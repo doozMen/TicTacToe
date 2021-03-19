@@ -1,10 +1,3 @@
-//
-//  TestsSharedPackage.swift
-//  TestsSharedPackage
-//
-//  Created by Stijn Willems on 19/03/2021.
-//
-
 import XCTest
 @testable import SharedPackage
 

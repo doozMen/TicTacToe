@@ -1,11 +1,4 @@
-//
-//  ContentView.swift
-//  Shared
-//
-//  Created by Stijn Willems on 19/03/2021.
-//
-
-import SwiftUI
+/import SwiftUI
 
 struct ContentView: View {
     var body: some View {
