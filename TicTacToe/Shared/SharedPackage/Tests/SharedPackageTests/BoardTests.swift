@@ -37,8 +37,16 @@ final class BoardTests: XCTestCase {
         XCTAssertThrowsError(try board.occupy(at: .init(item: 9, section: 9), with: .home))
     }
     
-    func test_do_not_allow_to_change_occupied_square() {
-        XCTFail()
+    func test_do_not_allow_to_change_occupied_square() throws {
+        try board.occupy(at: .init(item: 0, section: 1), with: .home)
+        XCTAssertThrowsError(try board.occupy(at: .init(item: 0, section: 1), with: .visitor) , "you cannot change an occupied square") { error in
+            guard let error = error as? Board.Error else {
+                XCTFail()
+                return
+            }
+            
+            XCTAssertEqual(error, Board.Error.invalid(indexPath: .init(item: 0, section: 0), function: "", filePath: ""))
+        }
     }
     
     // MARK: - Occupied

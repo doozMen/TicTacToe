@@ -57,7 +57,7 @@ final class Board: ObservableObject {
     
     // MARK: - Error
     
-    enum Error: Swift.Error, CustomStringConvertible {
+    enum Error: Swift.Error, CustomStringConvertible, Equatable {
         case invalid(indexPath: IndexPath, function: String, filePath: String)
         
         var description: String {
