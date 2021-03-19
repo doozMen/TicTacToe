@@ -33,6 +33,10 @@ final class BoardTests: XCTestCase {
         XCTAssertFalse(board.isGameover)
     }
     
+    func test_out_of_bounds_occupy() {
+        XCTAssertThrowsError(board.occupy(at: .init(item: 9, section: 9), with: .home))
+    }
+    
     func test_do_not_allow_to_change_occupied_square() {
         XCTFail()
     }
