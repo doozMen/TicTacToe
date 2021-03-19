@@ -91,6 +91,12 @@ final class BoardTests: XCTestCase {
     }
     
     func test_check_there_is_a_winner() {
-        XCTFail()
+        XCTAssertEqual(board.winner, .nobody)
+        
+        board.occupy(at: .init(item: 0, section: 0), with: .home)
+        board.occupy(at: .init(item: 1, section: 0), with: .home)
+        board.occupy(at: .init(item: 2, section: 0), with: .home)
+        
+        XCTAssertEqual(board.winner, .home)
     }
 }
