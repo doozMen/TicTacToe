@@ -10,9 +10,10 @@ struct ContentView: View {
             HStack {
                 Text(boardViewModel.winnerName)
                     .padding()
+                Spacer()
                 Button("Reset") {
                     boardViewModel.board.resetGame()
-                }
+                }.padding()
             }
             
             HStack {
