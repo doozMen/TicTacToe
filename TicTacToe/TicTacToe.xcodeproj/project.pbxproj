@@ -13,10 +13,10 @@
 		C01CD2EB2604B9CA003670C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C01CD2BF2604B9CA003670C4 /* Assets.xcassets */; };
 		C09C553E2604E1D2002F642B /* SharedPackage in Frameworks */ = {isa = PBXBuildFile; productRef = C09C553D2604E1D2002F642B /* SharedPackage */; };
 		C09C55402604E1DC002F642B /* SharedPackage in Frameworks */ = {isa = PBXBuildFile; productRef = C09C553F2604E1DC002F642B /* SharedPackage */; };
-		C09C55642604E2AC002F642B /* TestsSharedPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09C55632604E2AC002F642B /* TestsSharedPackage.swift */; };
 		C09C55732604E2CF002F642B /* SharedPackage in Frameworks */ = {isa = PBXBuildFile; productRef = C09C55722604E2CF002F642B /* SharedPackage */; };
-		C0BCFB8A26053FF50008A047 /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFB8826053FF50008A047 /* BoardTests.swift */; };
-		C0BCFB8B26053FF50008A047 /* BoardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFB8926053FF50008A047 /* BoardViewModelTests.swift */; };
+		C0BCFBBD26055DE90008A047 /* SquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBAC26055D3B0008A047 /* SquareTests.swift */; };
+		C0BCFBC826055E060008A047 /* BoardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFB8926053FF50008A047 /* BoardViewModelTests.swift */; };
+		C0BCFBD326055E0B0008A047 /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFB8826053FF50008A047 /* BoardTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +51,10 @@
 		C01CD2E52604B9CA003670C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C09C55382604E1C8002F642B /* SharedPackage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SharedPackage; sourceTree = "<group>"; };
 		C09C55612604E2AC002F642B /* SharedPackageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedPackageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C09C55632604E2AC002F642B /* TestsSharedPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsSharedPackage.swift; sourceTree = "<group>"; };
 		C09C55652604E2AC002F642B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0BCFB8826053FF50008A047 /* BoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
 		C0BCFB8926053FF50008A047 /* BoardViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewModelTests.swift; sourceTree = "<group>"; };
+		C0BCFBAC26055D3B0008A047 /* SquareTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,10 +179,10 @@
 		C09C55622604E2AC002F642B /* SharedPackageTests */ = {
 			isa = PBXGroup;
 			children = (
+				C09C55652604E2AC002F642B /* Info.plist */,
 				C0BCFB8826053FF50008A047 /* BoardTests.swift */,
 				C0BCFB8926053FF50008A047 /* BoardViewModelTests.swift */,
-				C09C55632604E2AC002F642B /* TestsSharedPackage.swift */,
-				C09C55652604E2AC002F642B /* Info.plist */,
+				C0BCFBAC26055D3B0008A047 /* SquareTests.swift */,
 			);
 			name = SharedPackageTests;
 			path = Shared/SharedPackage/Tests/SharedPackageTests;
@@ -392,8 +392,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0BCFB8A26053FF50008A047 /* BoardTests.swift in Sources */,
-				C0BCFB8B26053FF50008A047 /* BoardViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +422,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C09C55642604E2AC002F642B /* TestsSharedPackage.swift in Sources */,
+				C0BCFBBD26055DE90008A047 /* SquareTests.swift in Sources */,
+				C0BCFBC826055E060008A047 /* BoardViewModelTests.swift in Sources */,
+				C0BCFBD326055E0B0008A047 /* BoardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,7 +670,6 @@
 		C01CD2F52604B9CA003670C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWFDRU947Q;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
@@ -692,7 +691,6 @@
 		C01CD2F62604B9CA003670C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWFDRU947Q;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
