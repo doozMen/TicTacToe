@@ -38,6 +38,10 @@ final class Board: ObservableObject {
         guard indexPath.item < 3, indexPath.section < 3 else {
             throw Error.invalid(indexPath: indexPath, function: #function, filePath: #filePath)
         }
+        let occupation = squares[indexPath.section][indexPath.item].occupiedBy
+        guard occupation == .nobody else {
+            throw Error.cannotChangeOccupiedSquare(function: #function, filePath: #filePath)
+        }
         squares[indexPath.section][indexPath.item].occupiedBy = player
         checkGameStatus()
     }
@@ -59,16 +63,23 @@ final class Board: ObservableObject {
     
     enum Error: Swift.Error, CustomStringConvertible, Equatable {
         case invalid(indexPath: IndexPath, function: String, filePath: String)
+        case cannotChangeOccupiedSquare(function: String, filePath: String)
         
         var description: String {
             switch self {
                 case .invalid(indexPath: let indexPath, function: let function, filePath: let filePath):
                     return """
-                        Invalid indexPath: (\(indexPath.section), \(indexPath.item))
+                        ❌ Invalid indexPath: (\(indexPath.section), \(indexPath.item))
                             function: \(function)
                             filePath: \(filePath)
 
                         \(Board.self) is only 3x3 big!
+                        """
+                case .cannotChangeOccupiedSquare(function: let function, filePath: let filePath):
+                    return """
+                        ❌ Tried to change an occupied square.
+                            function: \(function)
+                            filePath: \(filePath)
                         """
             }
         }

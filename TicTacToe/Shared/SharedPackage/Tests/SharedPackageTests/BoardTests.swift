@@ -44,8 +44,11 @@ final class BoardTests: XCTestCase {
                 XCTFail()
                 return
             }
-            
-            XCTAssertEqual(error, Board.Error.invalid(indexPath: .init(item: 0, section: 0), function: "", filePath: ""))
+            if case Board.Error.cannotChangeOccupiedSquare = error {
+                
+            } else {
+                XCTFail()
+            }
         }
     }
     
