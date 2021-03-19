@@ -2,44 +2,44 @@
 import Combine
 
 struct ContentView: View {
-    @EnvironmentObject var board: Board
+    @EnvironmentObject var boardViewModel: BoardViewModel
     
     var body: some View {
         VStack {
-            Text("placeholder winner")
+            Text(boardViewModel.winnerName)
                 .padding()
             HStack {
                 VStack {
-                    SquareView(square: board.squares[0][0]) {
-                        do { try board.occupy(at: .init(item: 0, section: 0), with: .home) } catch { print(error) }
+                    SquareView(square: boardViewModel.board.squares[0][0]) {
+                        do { try boardViewModel.board.occupy(at: .init(item: 0, section: 0), with: .home) } catch { print(error) }
                     }
-                    SquareView(square: board.squares[0][1]) {
-                        do { try board.occupy(at: .init(item: 1, section: 0), with: .home) } catch { print(error) }
+                    SquareView(square: boardViewModel.board.squares[0][1]) {
+                        do { try boardViewModel.board.occupy(at: .init(item: 1, section: 0), with: .home) } catch { print(error) }
                     }
-                    SquareView(square: board.squares[0][2]) {
-                        do { try board.occupy(at: .init(item: 2, section: 0), with: .home) } catch { print(error) }
-                    }
-                }
-                VStack {
-                    SquareView(square: board.squares[1][0]) {
-                        do { try board.occupy(at: .init(item: 0, section: 1), with: .home) } catch { print(error) }
-                    }
-                    SquareView(square: board.squares[1][1]) {
-                        do { try board.occupy(at: .init(item: 1, section: 1), with: .home) } catch { print(error) }
-                    }
-                    SquareView(square: board.squares[1][2]) {
-                        do { try board.occupy(at: .init(item: 2, section: 1), with: .home) } catch { print(error) }
+                    SquareView(square: boardViewModel.board.squares[0][2]) {
+                        do { try boardViewModel.board.occupy(at: .init(item: 2, section: 0), with: .home) } catch { print(error) }
                     }
                 }
                 VStack {
-                    SquareView(square: board.squares[2][0]) {
-                        do { try board.occupy(at: .init(item: 0, section: 2), with: .home) } catch { print(error) }
+                    SquareView(square: boardViewModel.board.squares[1][0]) {
+                        do { try boardViewModel.board.occupy(at: .init(item: 0, section: 1), with: .home) } catch { print(error) }
                     }
-                    SquareView(square: board.squares[2][1]) {
-                        do { try board.occupy(at: .init(item: 1, section: 2), with: .home) } catch { print(error) }
+                    SquareView(square: boardViewModel.board.squares[1][1]) {
+                        do { try boardViewModel.board.occupy(at: .init(item: 1, section: 1), with: .home) } catch { print(error) }
                     }
-                    SquareView(square: board.squares[2][2]) {
-                        do { try board.occupy(at: .init(item: 2, section: 2), with: .home) } catch { print(error) }
+                    SquareView(square: boardViewModel.board.squares[1][2]) {
+                        do { try boardViewModel.board.occupy(at: .init(item: 2, section: 1), with: .home) } catch { print(error) }
+                    }
+                }
+                VStack {
+                    SquareView(square: boardViewModel.board.squares[2][0]) {
+                        do { try boardViewModel.board.occupy(at: .init(item: 0, section: 2), with: .home) } catch { print(error) }
+                    }
+                    SquareView(square: boardViewModel.board.squares[2][1]) {
+                        do { try boardViewModel.board.occupy(at: .init(item: 1, section: 2), with: .home) } catch { print(error) }
+                    }
+                    SquareView(square: boardViewModel.board.squares[2][2]) {
+                        do { try boardViewModel.board.occupy(at: .init(item: 2, section: 2), with: .home) } catch { print(error) }
                     }
                 }
             }.padding()

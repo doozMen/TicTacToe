@@ -5,7 +5,7 @@ import XCTest
 final class BoardViewModelTests: XCTestCase {
     func test_text_for_winner() throws {
         let board = Board()
-        let viewModel = BoardViewModel(board: board)
+        let viewModel = BoardViewModel(board)
         try makeAWinningRow(in: board, section: 0, candidate: .home)
         
         XCTAssertEqual(viewModel.winnerName, "home")
