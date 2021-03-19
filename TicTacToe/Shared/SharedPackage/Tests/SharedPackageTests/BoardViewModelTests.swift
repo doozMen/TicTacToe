@@ -14,7 +14,7 @@ final class BoardViewModelTests: XCTestCase {
         try makeAWinningRow(in: viewModel.board, section: 0, candidate: .home)
         XCTAssertEqual(viewModel.winnerName, "home")
         viewModel.board.resetGame()
-        XCTAssertEqual(viewModel.winnerName, "nobody")
+        XCTAssertEqual(viewModel.winnerName, BoardViewModel.noWinner)
     }
     
     func test_text_for_winner() throws {
