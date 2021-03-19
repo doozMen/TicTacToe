@@ -3,6 +3,7 @@ import Combine
 
 final class Square: Equatable, CustomStringConvertible, ObservableObject {
     static let empty = "     "
+    static let spacing = "  "
 
     static func == (lhs: Square, rhs: Square) -> Bool {
         lhs.occupiedBy == rhs.occupiedBy
@@ -18,9 +19,9 @@ final class Square: Equatable, CustomStringConvertible, ObservableObject {
                 case .nobody:
                     text = Square.empty
                 case .visitor:
-                    text = "v"
+                    text = "\(Square.spacing)v\(Square.spacing)"
                 case .home:
-                    text = "h"
+                    text = "\(Square.spacing)h\(Square.spacing)"
             }
         }
     }

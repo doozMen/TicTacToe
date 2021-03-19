@@ -14,11 +14,10 @@ class SquareTests: XCTestCase {
     }
     
     func test_text_equal_spacing() {
-        let homeSquare = Square(.home)
-        let visitorSquare = Square(.visitor)
-        
-        XCTAssertEqual(homeSquare.text, "  h  ")
-        XCTAssertEqual(visitorSquare.text, "  v  ")
+        square.occupiedBy = .home
+        XCTAssertEqual(square.text, "  h  ")
+        square.occupiedBy = .visitor
+        XCTAssertEqual(square.text, "  v  ")
     }
     
     func test_text() {
