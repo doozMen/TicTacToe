@@ -2,6 +2,11 @@ import Foundation
 import Combine
 
 final class Board: ObservableObject {
+    enum Mode {
+        case multiplayer, ai
+    }
+    
+    let mode: Mode
     @Published private(set) var isGameover: Bool
     @Published private(set) var isStarted: Bool
     @Published private(set) var winner: Square.OccupiedBy
@@ -22,7 +27,8 @@ final class Board: ObservableObject {
         [2, 4, 6]  // 7 Check second Diagonal
     ]
     
-    init() {
+    init(mode: Mode = .multiplayer) {
+        self.mode = mode
         self.squares = [
             [.init(.nobody), .init(.nobody), .init(.nobody)],
             [.init(.nobody), .init(.nobody), .init(.nobody)],

@@ -117,12 +117,14 @@ final class BoardTests: XCTestCase {
     // MARK: - Random
     
     func test_visitor_random_move() throws {
+        let board = Board(mode: .ai)
         XCTAssertFalse(board.isStarted)
         board.visitorRandomMove()
         XCTAssertTrue(board.isStarted)
     }
     
     func test_visitor_random_move_different_every_time() throws {
+        let board = Board(mode: .ai)
         let indexPath = board.visitorRandomMove()
         XCTAssertTrue(board.isStarted)
         let indexPath2 = board.visitorRandomMove()

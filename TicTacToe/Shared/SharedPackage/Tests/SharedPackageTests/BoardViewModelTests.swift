@@ -18,6 +18,8 @@ final class BoardViewModelTests: XCTestCase {
     }
     
     func test_visitor_plays_random() throws {
+        let board = Board(mode: .ai)
+        let viewModel = BoardViewModel(board)
         try viewModel.board.occupy(at: .init(item: 0, section: 0), with: .home)
         let result = viewModel.board.flatSquares.map(\.occupiedBy)
         XCTAssertTrue(result.contains(.home) && result.contains(.visitor))
