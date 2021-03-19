@@ -178,7 +178,8 @@
 				C09C55632604E2AC002F642B /* TestsSharedPackage.swift */,
 				C09C55652604E2AC002F642B /* Info.plist */,
 			);
-			path = TestsSharedPackage;
+			name = TestsSharedPackage;
+			path = Shared/SharedPackage/Tests/TestsSharedPackage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -745,7 +746,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = WWFDRU947Q;
-				INFOPLIST_FILE = TestsSharedPackage/Info.plist;
+				INFOPLIST_FILE = Shared/SharedPackage/Tests/TestsSharedPackage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -765,7 +766,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = WWFDRU947Q;
-				INFOPLIST_FILE = TestsSharedPackage/Info.plist;
+				INFOPLIST_FILE = Shared/SharedPackage/Tests/TestsSharedPackage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
