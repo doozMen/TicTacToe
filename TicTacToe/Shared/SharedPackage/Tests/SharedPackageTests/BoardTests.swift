@@ -75,11 +75,9 @@ final class BoardTests: XCTestCase {
 
         XCTAssertFalse(result, "initially the game should be ongoing")
 
-        let row: [IndexPath] = [.init(item: 0, section: 0), .init(item: 1, section: 0), .init(item: 2, section: 0) ]
-        let indexRows: [[IndexPath]] = [row, row, row]
-        for row in indexRows {
-            for indexPath in row {
-                try board.occupy(at: indexPath, with: .home)
+        for section in 0...2 {
+            for item  in 0...2 {
+                try board.occupy(at: .init(item: item, section: section), with: .home)
             }
         }
 
@@ -103,11 +101,9 @@ final class BoardTests: XCTestCase {
         
         XCTAssertFalse(result, "initially the game should be ongoing")
         
-        let row: [IndexPath] = [.init(item: 0, section: 0), .init(item: 1, section: 0), .init(item: 2, section: 0) ]
-        let indexRows: [[IndexPath]] = [row, row, row]
-        for row in indexRows {
-            for indexPath in row where indexPath.item != 0 && indexPath.section != 0 {
-                try board.occupy(at: indexPath, with: .home)
+        for section in 1...2 {
+            for item  in 0...2 {
+                try board.occupy(at: .init(item: item, section: section), with: .home)
             }
         }
         

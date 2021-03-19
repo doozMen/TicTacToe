@@ -40,7 +40,7 @@ final class Board: ObservableObject {
         }
         let occupation = squares[indexPath.section][indexPath.item].occupiedBy
         guard occupation == .nobody else {
-            throw Error.cannotChangeOccupiedSquare(function: #function, filePath: #filePath)
+            throw Error.cannotChangeOccupiedSquare(indexPath: indexPath, occupiedBy: player, function: #function, filePath: #filePath)
         }
         squares[indexPath.section][indexPath.item].occupiedBy = player
         checkGameStatus()
@@ -64,7 +64,7 @@ final class Board: ObservableObject {
     
     enum Error: Swift.Error, CustomStringConvertible, Equatable {
         case invalid(indexPath: IndexPath, function: String, filePath: String)
-        case cannotChangeOccupiedSquare(function: String, filePath: String)
+        case cannotChangeOccupiedSquare(indexPath: IndexPath, occupiedBy: Square.OccupiedBy, function: String, filePath: String)
         
         var description: String {
             switch self {
@@ -76,9 +76,9 @@ final class Board: ObservableObject {
 
                         \(Board.self) is only 3x3 big!
                         """
-                case .cannotChangeOccupiedSquare(function: let function, filePath: let filePath):
+                case .cannotChangeOccupiedSquare(indexPath: let indexPath, occupiedBy: let occupation, function: let function, filePath: let filePath):
                     return """
-                        ❌ Tried to change an occupied square.
+                        ❌ Tried to change an occupied square at \(indexPath) to \(occupation)
                             function: \(function)
                             filePath: \(filePath)
                         """
@@ -105,7 +105,7 @@ final class Board: ObservableObject {
     
     private func checkGameStatus() {
         let flatSquares: [Square] = squares.flatMap { $0 }
-        isGameover = flatSquares.filter { $0.occupiedBy != .nobody }.count != 0
+        isGameover = flatSquares.filter { $0.occupiedBy == .nobody }.count == 0
         isStarted = flatSquares.contains(.init(.home)) || flatSquares.contains(.init(.visitor))
         winner = checkForWinner()
     }
