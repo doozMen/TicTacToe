@@ -3,17 +3,17 @@ import Combine
 
 final class Square: Equatable {
     static func == (lhs: Square, rhs: Square) -> Bool {
-        lhs.ownedBy == rhs.ownedBy
+        lhs.occupiedBy == rhs.occupiedBy
     }
     
     enum OccupiedBy: Equatable {
         case nobody, visitor, home
     }
     
-    @Published var ownedBy: OccupiedBy
+    @Published var occupiedBy: OccupiedBy
     
     init(_ ownedBy: OccupiedBy) {
-        self.ownedBy = ownedBy
+        self.occupiedBy = ownedBy
     }
     
 }

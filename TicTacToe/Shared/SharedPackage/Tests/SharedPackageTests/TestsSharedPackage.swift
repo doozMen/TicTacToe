@@ -9,16 +9,16 @@ class SquareTests: XCTestCase {
         square = .init(.nobody)
     }
     func test_init() {
-        XCTAssertEqual(square.ownedBy, .nobody)
+        XCTAssertEqual(square.occupiedBy, .nobody)
     }
     
     func test_bindable_status() {
         var result = [Square.OccupiedBy]()
         let cancellable = square
-            .$ownedBy
+            .$occupiedBy
             .collect(2)
             .sink { result = $0}
-        square.ownedBy = .home
+        square.occupiedBy = .home
         cancellable.cancel()
         XCTAssertEqual(result, [.nobody, .home])
     }
