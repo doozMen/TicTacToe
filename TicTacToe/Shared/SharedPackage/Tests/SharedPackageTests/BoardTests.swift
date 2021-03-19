@@ -33,6 +33,10 @@ final class BoardTests: XCTestCase {
         XCTAssertFalse(board.isGameover)
     }
     
+    func test_do_not_allow_to_change_occupied_square() {
+        XCTFail()
+    }
+    
     // MARK: - Occupied
     
     func test_square_occupied() {
