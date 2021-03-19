@@ -40,7 +40,7 @@ final class Board: ObservableObject {
     }
     
     func isOccupied(at indexPath: IndexPath) -> Bool {
-        return false
+        return squares[indexPath.section][indexPath.item].occupiedBy != .nobody
     }
     
     func resetGame() {
