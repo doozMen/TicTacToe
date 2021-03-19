@@ -137,10 +137,8 @@ final class BoardTests: XCTestCase {
         let candidates: [Square.OccupiedBy] = [.home, .visitor]
 
         for candidate in candidates {
-            for row in 0..<3 {
-                try board.occupy(at: .init(item: 0, section: row), with: candidate)
-                try board.occupy(at: .init(item: 1, section: row), with: candidate)
-                try board.occupy(at: .init(item: 2, section: row), with: candidate)
+            for section in 0..<3 {
+                try makeAWinningRow(in: board, section: section, candidate: candidate)
                 
                 XCTAssertEqual(board.winner, candidate)
                 try board.resetGame()
@@ -186,5 +184,10 @@ final class BoardTests: XCTestCase {
             try board.resetGame()
         }
     }
-    
+}
+
+func makeAWinningRow(in board: Board, section: Int, candidate: Square.OccupiedBy) throws {
+    try board.occupy(at: .init(item: 0, section: section), with: candidate)
+    try board.occupy(at: .init(item: 1, section: section), with: candidate)
+    try board.occupy(at: .init(item: 2, section: section), with: candidate)
 }
