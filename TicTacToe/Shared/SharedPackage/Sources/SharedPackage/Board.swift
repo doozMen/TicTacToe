@@ -51,7 +51,7 @@ final class Board: ObservableObject {
             section = Int.random(in: 0..<3)
             item = Int.random(in: 0..<3)
         }
-        squares[item][section].occupiedBy = .visitor
+        squares[section][item].occupiedBy = .visitor
         checkGameStatus()
         return IndexPath(item: item, section: section)
     }
