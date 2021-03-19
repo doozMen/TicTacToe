@@ -106,4 +106,27 @@ final class BoardTests: XCTestCase {
         }
     }
     
+    func test_check_winner_diagonals() {
+        XCTAssertEqual(board.winner, .nobody)
+        let candidates: [Square.OccupiedBy] = [.home, .visitor]
+        
+        for candidate in candidates {
+            board.occupy(at: .init(item: 0, section: 0), with: candidate)
+            board.occupy(at: .init(item: 1, section: 1), with: candidate)
+            board.occupy(at: .init(item: 2, section: 2), with: candidate)
+            
+            XCTAssertEqual(board.winner, candidate)
+            board.resetGame()
+        }
+        
+        for candidate in candidates {
+            board.occupy(at: .init(item: 2, section: 0), with: candidate)
+            board.occupy(at: .init(item: 1, section: 1), with: candidate)
+            board.occupy(at: .init(item: 0, section: 2), with: candidate)
+            
+            XCTAssertEqual(board.winner, candidate)
+            board.resetGame()
+        }
+    }
+    
 }
