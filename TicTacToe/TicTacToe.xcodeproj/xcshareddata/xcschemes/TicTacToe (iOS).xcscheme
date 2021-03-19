@@ -37,6 +37,13 @@
             BlueprintName = "TicTacToe (iOS)"
             ReferencedContainer = "container:TicTacToe.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "SharedPackage"
+            BuildableName = "SharedPackage"
+            BlueprintName = "SharedPackage"
+            ReferencedContainer = "container:Shared/SharedPackage">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference

@@ -17,6 +17,12 @@
 		C0BCFBBD26055DE90008A047 /* SquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBAC26055D3B0008A047 /* SquareTests.swift */; };
 		C0BCFBC826055E060008A047 /* BoardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFB8926053FF50008A047 /* BoardViewModelTests.swift */; };
 		C0BCFBD326055E0B0008A047 /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFB8826053FF50008A047 /* BoardTests.swift */; };
+		C0BCFBDF260562A50008A047 /* TicTacToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */; };
+		C0BCFBE0260562A50008A047 /* TicTacToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */; };
+		C0BCFBEC260562A90008A047 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBEB260562A90008A047 /* SquareView.swift */; };
+		C0BCFBED260562A90008A047 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBEB260562A90008A047 /* SquareView.swift */; };
+		C0BCFBF4260562AE0008A047 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBF3260562AE0008A047 /* ContentView.swift */; };
+		C0BCFBF5260562AE0008A047 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBF3260562AE0008A047 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,9 @@
 		C0BCFB8826053FF50008A047 /* BoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
 		C0BCFB8926053FF50008A047 /* BoardViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewModelTests.swift; sourceTree = "<group>"; };
 		C0BCFBAC26055D3B0008A047 /* SquareTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareTests.swift; sourceTree = "<group>"; };
+		C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeApp.swift; sourceTree = "<group>"; };
+		C0BCFBEB260562A90008A047 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		C0BCFBF3260562AE0008A047 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +125,9 @@
 		C01CD2BC2604B9C9003670C4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */,
+				C0BCFBEB260562A90008A047 /* SquareView.swift */,
+				C0BCFBF3260562AE0008A047 /* ContentView.swift */,
 				C09C55382604E1C8002F642B /* SharedPackage */,
 				C01CD2BF2604B9CA003670C4 /* Assets.xcassets */,
 			);
@@ -392,6 +404,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0BCFBDF260562A50008A047 /* TicTacToeApp.swift in Sources */,
+				C0BCFBEC260562A90008A047 /* SquareView.swift in Sources */,
+				C0BCFBF4260562AE0008A047 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +414,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0BCFBE0260562A50008A047 /* TicTacToeApp.swift in Sources */,
+				C0BCFBED260562A90008A047 /* SquareView.swift in Sources */,
+				C0BCFBF5260562AE0008A047 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +688,7 @@
 		C01CD2F52604B9CA003670C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWFDRU947Q;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
@@ -691,6 +710,7 @@
 		C01CD2F62604B9CA003670C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWFDRU947Q;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
@@ -713,6 +733,7 @@
 		C01CD2F82604B9CA003670C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = WWFDRU947Q;
@@ -734,6 +755,7 @@
 		C01CD2F92604B9CA003670C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = WWFDRU947Q;
