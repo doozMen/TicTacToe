@@ -4,8 +4,10 @@ import SwiftUI
 struct TicTacToeApp: App {
     let board = Board(mode: .ai)
     var body: some Scene {
-        WindowGroup {
-            ContentView().environmentObject(BoardViewModel(board))
+        let viewModel = BoardViewModel(board)
+
+        return WindowGroup {
+            ContentView(reset: false).environmentObject(viewModel)
         }
     }
 }

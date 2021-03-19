@@ -3,11 +3,18 @@ import Combine
 
 struct ContentView: View {
     @EnvironmentObject var boardViewModel: BoardViewModel
+    @State var reset: Bool
     
     var body: some View {
         VStack {
-            Text(boardViewModel.winnerName)
-                .padding()
+            HStack {
+                Text(boardViewModel.winnerName)
+                    .padding()
+                Button("Reset") {
+                    boardViewModel.board.resetGame()
+                }
+            }
+            
             HStack {
                 VStack {
                     SquareView(square: boardViewModel.board.squares[0][0]) {
@@ -49,6 +56,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(Board())
+        ContentView(reset: false).environmentObject(Board())
     }
 }

@@ -13,7 +13,7 @@ final class BoardViewModelTests: XCTestCase {
     func test_reset() throws {
         try makeAWinningRow(in: viewModel.board, section: 0, candidate: .home)
         XCTAssertEqual(viewModel.winnerName, "home")
-        viewModel.reset = true
+        viewModel.board.resetGame()
         XCTAssertEqual(viewModel.winnerName, "nobody")
     }
     

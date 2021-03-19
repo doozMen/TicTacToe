@@ -27,7 +27,7 @@ final class BoardTests: XCTestCase {
     func test_board_reset() throws {
         try board.occupy(at: .init(item: 0, section: 1), with: .home)
         XCTAssertTrue(board.isStarted)
-        try board.resetGame()
+        board.resetGame()
         
         XCTAssertFalse(board.isStarted)
         XCTAssertFalse(board.isGameover)
@@ -143,7 +143,7 @@ final class BoardTests: XCTestCase {
                 try makeAWinningRow(in: board, section: section, candidate: candidate)
                 
                 XCTAssertEqual(board.winner, candidate)
-                try board.resetGame()
+                board.resetGame()
             }
         }
     }
@@ -159,7 +159,7 @@ final class BoardTests: XCTestCase {
                 try board.occupy(at: .init(item: column, section: 2), with: candidate)
                 
                 XCTAssertEqual(board.winner, candidate)
-                try board.resetGame()
+                board.resetGame()
             }
         }
     }
@@ -174,7 +174,7 @@ final class BoardTests: XCTestCase {
             try board.occupy(at: .init(item: 2, section: 2), with: candidate)
             
             XCTAssertEqual(board.winner, candidate)
-            try board.resetGame()
+            board.resetGame()
         }
         
         for candidate in candidates {
@@ -183,7 +183,7 @@ final class BoardTests: XCTestCase {
             try board.occupy(at: .init(item: 0, section: 2), with: candidate)
             
             XCTAssertEqual(board.winner, candidate)
-            try board.resetGame()
+            board.resetGame()
         }
     }
 }
