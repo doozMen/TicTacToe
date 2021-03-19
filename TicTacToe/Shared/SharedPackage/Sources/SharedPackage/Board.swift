@@ -39,6 +39,10 @@ final class Board: ObservableObject {
         checkGameStatus()
     }
     
+    func isOccupied(at indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
     func resetGame() {
         for section in 0...2 {
             for item  in 0...2 {

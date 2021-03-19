@@ -33,6 +33,15 @@ final class BoardTests: XCTestCase {
         XCTAssertFalse(board.isGameover)
     }
     
+    // MARK: - Occupied
+    
+    func test_square_occupied() {
+        let indexPath = IndexPath(item: 0, section: 0)
+        board.occupy(at: indexPath, with: .home)
+        XCTAssertTrue(board.isOccupied(at: indexPath))
+    }
+    
+    // MARK: - Gameover
     
     func test_board_gameover() throws {
         var result = false
@@ -89,6 +98,8 @@ final class BoardTests: XCTestCase {
         
         cancelable.cancel()
     }
+    
+    // MARK: - Winners
     
     func test_check_winner_rows() {
         XCTAssertEqual(board.winner, .nobody)
