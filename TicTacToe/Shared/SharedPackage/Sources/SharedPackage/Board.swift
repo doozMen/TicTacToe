@@ -23,11 +23,18 @@ final class Board: ObservableObject {
         checkGameStatus()
     }
     
+    func resetGame() {
+        for section in 0...2 {
+            for item  in 0...2 {
+                occupy(at: .init(item: item, section: section), with: .nobody)
+            }
+        }
+        checkGameStatus()
+    }
+    
     private func checkGameStatus() {
-        guard !isGameover else { return }
-        
         let flatSquares: [Square] = squares.flatMap { $0 }
-        isGameover = flatSquares.first { $0.occupiedBy == .nobody } != nil
+        isGameover = flatSquares.filter { $0.occupiedBy != .nobody }.count != 0
         isStarted = flatSquares.contains(.init(.home)) || flatSquares.contains(.init(.visitor))
     }
 }

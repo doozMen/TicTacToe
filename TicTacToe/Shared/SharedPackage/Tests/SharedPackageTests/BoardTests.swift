@@ -18,17 +18,28 @@ final class BoardTests: XCTestCase {
         XCTAssertFalse(board.isStarted)
     }
     
-    func test_board_started() throws {
+    func test_board_started() {
         board.occupy(at: .init(item: 0, section: 1), with: .home)
         
         XCTAssertTrue(board.isStarted)
     }
+    
+    func test_board_reset() {
+        board.occupy(at: .init(item: 0, section: 1), with: .home)
+        XCTAssertTrue(board.isStarted)
+        board.resetGame()
+        
+        XCTAssertFalse(board.isStarted)
+        XCTAssertFalse(board.isGameover)
+    }
+    
     
     func test_board_gameover() throws {
         var result = false
         var callCount = 0
         let cancelable = board
             .$isGameover
+            .removeDuplicates()
             .sink { isGameOver in
                 result = isGameOver
                 callCount += 1
@@ -47,6 +58,7 @@ final class BoardTests: XCTestCase {
         XCTAssertEqual(callCount, 2, "as the value of isGameover changes initialy and when it is gameover this should be exacly 2")
 
         XCTAssertTrue(result, "A game ends if there are no more boxes available or if one of the two players align three symbols before the other.")
+        
         cancelable.cancel()
     }
 
@@ -55,6 +67,7 @@ final class BoardTests: XCTestCase {
         var callCount = 0
         let cancelable = board
             .$isGameover
+            .removeDuplicates()
             .sink { isGameOver in
                 result = isGameOver
                 callCount += 1
@@ -73,6 +86,11 @@ final class BoardTests: XCTestCase {
         XCTAssertEqual(callCount, 1, "there is no value change for gameOver so this should stay false")
         
         XCTAssertFalse(result, "left one square occupied by nobody so game is not yet over")
+        
         cancelable.cancel()
+    }
+    
+    func test_check_there_is_a_winner() {
+        XCTFail()
     }
 }
