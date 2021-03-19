@@ -46,20 +46,14 @@ final class Board: ObservableObject {
     func visitorRandomMove() -> IndexPath {
         var section = Int.random(in: 0..<3)
         var item = Int.random(in: 0..<3)
-        var indexPath: IndexPath!
         
         while isOccupied(at: .init(item: item, section: section)) && !isGameover {
             section = Int.random(in: 0..<3)
             item = Int.random(in: 0..<3)
         }
-        do {
-            indexPath = .init(item: item, section: section)
-            try occupy(at: indexPath, with: .visitor)
-        } catch {
-            assertionFailure("This should not happen, \(error) in \(#function), \(#filePath)")
-            // can safly be ignored as the random above check that values are correct
-        }
-        return indexPath
+        squares[item][section].occupiedBy = .visitor
+        checkGameStatus()
+        return IndexPath(item: item, section: section)
     }
     
     func occupy(at indexPath: IndexPath, with player: Square.OccupiedBy) throws {
@@ -71,6 +65,14 @@ final class Board: ObservableObject {
             throw Error.cannotChangeOccupiedSquare(indexPath: indexPath, occupiedBy: player, function: #function, filePath: #filePath)
         }
         squares[indexPath.section][indexPath.item].occupiedBy = player
+        
+        switch mode {
+            case .multiplayer:
+                break
+            case .ai:
+                visitorRandomMove()
+        }
+        
         checkGameStatus()
     }
     
