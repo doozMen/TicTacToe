@@ -14,4 +14,8 @@ class SquareTests: XCTestCase {
         let square = Square(status: .nobody)
         XCTAssertEqual(square.status, .nobody)
     }
+    
+    func test_bindable_status() {
+        XCTFail()
+    }
 }
