@@ -10,6 +10,13 @@ final class BoardViewModelTests: XCTestCase {
         viewModel = BoardViewModel(.init())
     }
     
+    func test_reset() throws {
+        try makeAWinningRow(in: viewModel.board, section: 0, candidate: .home)
+        XCTAssertEqual(viewModel.winnerName, "home")
+        viewModel.reset = true
+        XCTAssertEqual(viewModel.winnerName, "nobody")
+    }
+    
     func test_text_for_winner() throws {
        
         try makeAWinningRow(in: viewModel.board, section: 0, candidate: .home)

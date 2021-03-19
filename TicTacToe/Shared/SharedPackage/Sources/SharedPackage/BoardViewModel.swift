@@ -4,11 +4,13 @@ import Combine
 final class BoardViewModel: ObservableObject {
     let board: Board
     @Published var winnerName: String = "nobody"
+    @Published var reset: Bool
     
     private var cancelables: Set<AnyCancellable> = []
     
     init(_ board: Board) {
         self.board = board
+        self.reset = false
         board.$winner.sink { [weak self] in
             switch $0 {
                 case .nobody:
