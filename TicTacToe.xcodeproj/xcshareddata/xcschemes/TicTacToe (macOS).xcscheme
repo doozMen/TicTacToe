@@ -51,25 +51,8 @@
             BlueprintName = "TicTacToe (macOS)"
             ReferencedContainer = "container:TicTacToe.xcodeproj">
          </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "SharedPackage"
-            BuildableName = "SharedPackage"
-            BlueprintName = "SharedPackage"
-            ReferencedContainer = "container:Shared/SharedPackage">
-         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C01CD2DE2604B9CA003670C4"
-               BuildableName = "Tests macOS.xctest"
-               BlueprintName = "Tests macOS"
-               ReferencedContainer = "container:TicTacToe.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
@@ -78,6 +61,16 @@
                BuildableName = "TicTacToeUITests (macOS).xctest"
                BlueprintName = "TicTacToeUITests (macOS)"
                ReferencedContainer = "container:TicTacToe.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "TicTacToeKitTests"
+               BuildableName = "TicTacToeKitTests"
+               BlueprintName = "TicTacToeKitTests"
+               ReferencedContainer = "container:../TicTacToeKit">
             </BuildableReference>
          </TestableReference>
       </Testables>
