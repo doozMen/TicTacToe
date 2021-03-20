@@ -21,5 +21,9 @@ final class BoardViewModel: ObservableObject {
                     self?.winnerName = "home"
             }
         }.store(in: &cancelables)
+        $reset.sink { [weak self] in
+            guard $0 else { return }
+            self?.board.resetGame()
+        }.store(in: &cancelables)
     }
 }

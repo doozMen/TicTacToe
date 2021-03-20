@@ -80,7 +80,7 @@ final class Board: ObservableObject {
         return squares[indexPath.section][indexPath.item].occupiedBy != .nobody
     }
     
-    func resetGame() throws {
+    func resetGame() {
         for section in 0...2 {
             for item  in 0...2 {
                 squares[section][item].occupiedBy = .nobody
