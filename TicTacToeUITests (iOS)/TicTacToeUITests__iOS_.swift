@@ -33,6 +33,9 @@ class TicTacToeUITests__iOS_: XCTestCase {
         XCTAssertEqual(firstCircle.label, "Square 1 - from you")
         resetButton.tap()
         XCTAssertEqual(firstCircle.label, "Square 1 - from nobody yet")
+        let gameStatusTextView = app.staticTexts["Game Status Text"]
+        XCTAssertTrue(gameStatusTextView.waitForExistence(timeout: 2))
+        XCTAssertEqual(gameStatusTextView.label, "no winner yet")
     }
 
 }
