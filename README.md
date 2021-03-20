@@ -17,18 +17,24 @@ Folder structure like this:
 
 ```
 ┌───────────────┐
-│~/<#Developer#>    │
+│~/<#Developer#>│
 └─────┬─────────┘
     │ │
     │ │   ┌─────────────────────────────────────────────────────────────────────────────┐
-    │ └───│TicTacToe = https://github.com/kata-me/TicTacToeKit/releases/tag/0.0.1-alpha │
+    │ └───│TicTacToe = https://github.com/kata-me/TicTacToeKit/releases/tag/1.O.0       │
     │     └─────────────────────────────────────────────────────────────────────────────┘
     │     ┌─────────────────────────────────────────────────────────────────────────────┐
-    └─────│TicTacToeKit = https://github.com/kata-me/TicTacToe/releases/tag/0.0.2-alpha │
+    └─────│TicTacToeKit = https://github.com/kata-me/TicTacToe/releases/tag/1.0.0       │
           └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 If you only want one project remove from `TicTacToe.xcodeproj` the reverence folder `TicTacToeKit` and xcode will check out using SPM depency management.
+
+Take a look ate the [Releases](https://github.com/kata-me/TicTacToe/releases) to get big picture of steps taken. 
+
+The local SPM package approach is mainly handy for development. As of version 1.0.0 it could be chosen to only. checking TicTacToe as TicTacTooKit will remain maybe stable. The main reason a swift package was chosen was to make build and running test a lot faster during development. 
+
+The largest part of the tests are logic tests, by separating into a SPM package these tests can be ran fast on a mac every time, for example before pushing.
 
 ## Building
 

@@ -126,7 +126,6 @@
 			children = (
 				C01EA1D726063A1D00ED72DF /* TicTacToeKit */,
 				C01EA1DC26063A9B00ED72DF /* README.md */,
-				C01EA2212606520000ED72DF /* TicTacToeUITests (macOS) */,
 				C01CD30C2604BB53003670C4 /* Frameworks */,
 				C01CD2C62604B9CA003670C4 /* iOS */,
 				C01CD2CD2604B9CA003670C4 /* macOS */,
@@ -135,6 +134,7 @@
 				C01CD2D72604B9CA003670C4 /* Tests iOS */,
 				C01CD2E22604B9CA003670C4 /* Tests macOS */,
 				C01EA2042606447500ED72DF /* TicTacToeUITests (iOS) */,
+				C01EA2212606520000ED72DF /* TicTacToeUITests (macOS) */,
 			);
 			sourceTree = "<group>";
 		};
@@ -985,7 +985,7 @@
 			repositoryURL = "https://github.com/kata-me/TicTacToeKit";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = "0.0.1-alpha";
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
