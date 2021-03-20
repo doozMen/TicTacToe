@@ -70,6 +70,16 @@
                ReferencedContainer = "container:TicTacToe.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C01EA2022606447500ED72DF"
+               BuildableName = "TicTacToeUITests (iOS).xctest"
+               BlueprintName = "TicTacToeUITests (iOS)"
+               ReferencedContainer = "container:TicTacToe.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
