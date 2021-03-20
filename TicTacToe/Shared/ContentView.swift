@@ -5,6 +5,7 @@ import SharedPackage
 struct ContentView: View {
     @EnvironmentObject var boardViewModel: BoardViewModel
     @State var reset: Bool
+    @State var winnerColor: Color = BoardViewModel.noWinnerColor
     
     var body: some View {
         VStack {
@@ -35,8 +36,10 @@ struct ContentView: View {
                     createSquare(item: 2, section: 2)
                 }.padding()
             }.padding()
-        }.onReceive(boardViewModel.$winnerName, perform: { _ in
-            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=code@*/ /*@END_MENU_TOKEN@*/
+        }
+        .background(winnerColor)
+        .onReceive(boardViewModel.$winnerColor, perform: { color in
+            self.winnerColor = color.opacity(0.2)
         })
     }
 }
