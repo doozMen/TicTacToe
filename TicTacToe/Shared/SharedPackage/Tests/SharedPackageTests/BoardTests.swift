@@ -114,6 +114,14 @@ final class BoardTests: XCTestCase {
         cancelable.cancel()
     }
     
+    // MARK: - Random
+    
+    func test_visitor_random_move() throws {
+        XCTAssertFalse(board.isStarted)
+        try board.visitorRandomMove()
+        XCTAssertTrue(board.isStarted)
+    }
+    
     // MARK: - Winners
     
     func test_check_winner_rows() throws {

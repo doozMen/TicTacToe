@@ -34,6 +34,11 @@ final class Board: ObservableObject {
         self.flatSquares = squares.flatMap { $0 }
     }
     
+    /// Allows to play against AI
+    /// - Returns: indexPath the visitor will occupy
+    func visitorRandomMove() -> IndexPath {
+        return .init(item: 0, section: 0)
+    }
     func occupy(at indexPath: IndexPath, with player: Square.OccupiedBy) throws {
         guard indexPath.item < 3, indexPath.section < 3 else {
             throw Error.invalid(indexPath: indexPath, function: #function, filePath: #filePath)
