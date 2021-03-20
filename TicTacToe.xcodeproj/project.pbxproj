@@ -55,7 +55,6 @@
 		C01CD2DF2604B9CA003670C4 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01CD2E32604B9CA003670C4 /* Tests_launch_performance_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_launch_performance_macOS.swift; sourceTree = "<group>"; };
 		C01CD2E52604B9CA003670C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C09C55382604E1C8002F642B /* SharedPackage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SharedPackage; sourceTree = "<group>"; };
 		C09C55612604E2AC002F642B /* SharedPackageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedPackageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09C55652604E2AC002F642B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0BCFB8826053FF50008A047 /* BoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
@@ -128,7 +127,6 @@
 				C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */,
 				C0BCFBEB260562A90008A047 /* SquareView.swift */,
 				C0BCFBF3260562AE0008A047 /* ContentView.swift */,
-				C09C55382604E1C8002F642B /* SharedPackage */,
 				C01CD2BF2604B9CA003670C4 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -197,7 +195,7 @@
 				C0BCFBAC26055D3B0008A047 /* SquareTests.swift */,
 			);
 			name = SharedPackageTests;
-			path = Shared/SharedPackage/Tests/SharedPackageTests;
+			path = ../SharedPackage/Tests/SharedPackageTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
