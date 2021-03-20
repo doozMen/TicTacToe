@@ -8,7 +8,7 @@ struct TicTacToeApp: App {
         let viewModel = BoardViewModel(board)
 
         return WindowGroup {
-            ContentView(reset: false).environmentObject(viewModel)
+            ContentView().environmentObject(viewModel)
         }
     }
 }

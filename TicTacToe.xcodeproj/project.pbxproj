@@ -15,10 +15,6 @@
 		C01EA1D22606394200ED72DF /* TicTacToeKit in Frameworks */ = {isa = PBXBuildFile; productRef = C01EA1D12606394200ED72DF /* TicTacToeKit */; };
 		C0BCFBDF260562A50008A047 /* TicTacToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */; };
 		C0BCFBE0260562A50008A047 /* TicTacToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */; };
-		C0BCFBEC260562A90008A047 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBEB260562A90008A047 /* SquareView.swift */; };
-		C0BCFBED260562A90008A047 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBEB260562A90008A047 /* SquareView.swift */; };
-		C0BCFBF4260562AE0008A047 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBF3260562AE0008A047 /* ContentView.swift */; };
-		C0BCFBF5260562AE0008A047 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBF3260562AE0008A047 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +50,6 @@
 		C01EA1D726063A1D00ED72DF /* TicTacToeKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TicTacToeKit; path = ../TicTacToeKit; sourceTree = "<group>"; };
 		C01EA1DC26063A9B00ED72DF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeApp.swift; sourceTree = "<group>"; };
-		C0BCFBEB260562A90008A047 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
-		C0BCFBF3260562AE0008A047 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */,
-				C0BCFBEB260562A90008A047 /* SquareView.swift */,
-				C0BCFBF3260562AE0008A047 /* ContentView.swift */,
 				C01CD2BF2604B9CA003670C4 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -345,8 +337,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0BCFBDF260562A50008A047 /* TicTacToeApp.swift in Sources */,
-				C0BCFBEC260562A90008A047 /* SquareView.swift in Sources */,
-				C0BCFBF4260562AE0008A047 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,8 +345,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0BCFBE0260562A50008A047 /* TicTacToeApp.swift in Sources */,
-				C0BCFBED260562A90008A047 /* SquareView.swift in Sources */,
-				C0BCFBF5260562AE0008A047 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
