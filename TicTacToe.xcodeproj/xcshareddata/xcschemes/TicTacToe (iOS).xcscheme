@@ -20,6 +20,20 @@
                ReferencedContainer = "container:TicTacToe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "TicTacToeKitTests"
+               BuildableName = "TicTacToeKitTests"
+               BlueprintName = "TicTacToeKitTests"
+               ReferencedContainer = "container:../TicTacToeKit">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -53,16 +67,6 @@
                BlueprintIdentifier = "C01CD2D32604B9CA003670C4"
                BuildableName = "Tests iOS.xctest"
                BlueprintName = "Tests iOS"
-               ReferencedContainer = "container:TicTacToe.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C09C55602604E2AC002F642B"
-               BuildableName = "SharedPackageTests.xctest"
-               BlueprintName = "SharedPackageTests"
                ReferencedContainer = "container:TicTacToe.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -9,6 +9,25 @@ The `TicTacToe/TicTacToe.xcodeproj/` contains several targets:
 - TicTacToe (iOS) = runs Unit tests and some basic application launch test on iPhone simulator and runs the app on an IOS device for you to play
 - TicTacToe (macOS) = runs on macOS and also runs unit tests and some basic application tests
 
+## Checkout
+
+For conveniency of the example and as most of the TDD is done in TicTacToeKit we suggest to run the project by checking out 2 repos from git. 
+
+Folder structure like this:
+
+```
+┌───────────────┐
+│~/<#Developer#>    │
+└─────┬─────────┘
+    │ │
+    │ │   ┌─────────────────────────────────────────────────────────────────────────────┐
+    │ └───│TicTacToe = https://github.com/kata-me/TicTacToeKit/releases/tag/0.0.1-alpha │
+    │     └─────────────────────────────────────────────────────────────────────────────┘
+    │     ┌─────────────────────────────────────────────────────────────────────────────┐
+    └─────│TicTacToeKit = https://github.com/kata-me/TicTacToe/releases/tag/0.0.2-alpha │
+          └─────────────────────────────────────────────────────────────────────────────┘
+```
+
 
 ## Building
 

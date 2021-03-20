@@ -51,6 +51,8 @@
 		C01CD2DF2604B9CA003670C4 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01CD2E32604B9CA003670C4 /* Tests_launch_performance_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_launch_performance_macOS.swift; sourceTree = "<group>"; };
 		C01CD2E52604B9CA003670C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C01EA1D726063A1D00ED72DF /* TicTacToeKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TicTacToeKit; path = ../TicTacToeKit; sourceTree = "<group>"; };
+		C01EA1DC26063A9B00ED72DF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeApp.swift; sourceTree = "<group>"; };
 		C0BCFBEB260562A90008A047 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		C0BCFBF3260562AE0008A047 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,8 @@
 		C01CD2B72604B9C9003670C4 = {
 			isa = PBXGroup;
 			children = (
+				C01EA1DC26063A9B00ED72DF /* README.md */,
+				C01EA1D726063A1D00ED72DF /* TicTacToeKit */,
 				C01CD30C2604BB53003670C4 /* Frameworks */,
 				C01CD2C62604B9CA003670C4 /* iOS */,
 				C01CD2CD2604B9CA003670C4 /* macOS */,
