@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-final class Square: Equatable {
+final class Square: Equatable, CustomStringConvertible {
     static func == (lhs: Square, rhs: Square) -> Bool {
         lhs.occupiedBy == rhs.occupiedBy
     }
@@ -14,6 +14,12 @@ final class Square: Equatable {
     
     init(_ ownedBy: OccupiedBy) {
         self.occupiedBy = ownedBy
+    }
+    
+    var description: String {
+        return """
+        \(occupiedBy)
+        """
     }
     
 }

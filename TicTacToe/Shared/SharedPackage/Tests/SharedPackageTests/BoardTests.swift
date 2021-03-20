@@ -90,13 +90,20 @@ final class BoardTests: XCTestCase {
         cancelable.cancel()
     }
     
-    func test_check_there_is_a_winner() {
+    func test_check_winner_rows() {
         XCTAssertEqual(board.winner, .nobody)
-        
-        board.occupy(at: .init(item: 0, section: 0), with: .home)
-        board.occupy(at: .init(item: 1, section: 0), with: .home)
-        board.occupy(at: .init(item: 2, section: 0), with: .home)
-        
-        XCTAssertEqual(board.winner, .home)
+        let candidates: [Square.OccupiedBy] = [.home, .visitor]
+
+        for candidate in candidates {
+            for row in 0..<3 {
+                board.occupy(at: .init(item: 0, section: row), with: candidate)
+                board.occupy(at: .init(item: 1, section: row), with: candidate)
+                board.occupy(at: .init(item: 2, section: row), with: candidate)
+                
+                XCTAssertEqual(board.winner, candidate)
+                board.resetGame()
+            }
+        }
     }
+    
 }
