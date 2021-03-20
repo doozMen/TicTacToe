@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 import Combine
-import SharedPackage
+import TicTacToeKit
 
 struct SquareView: View {
     @State var square : Square

@@ -1,6 +1,6 @@
 import SwiftUI
 import Combine
-import SharedPackage
+import TicTacToeKit
 
 struct ContentView: View {
     @EnvironmentObject var boardViewModel: BoardViewModel

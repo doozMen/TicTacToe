@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "TicTacToeKit",
+        "repositoryURL": "https://github.com/kata-me/TicTacToeKit",
+        "state": {
+          "branch": null,
+          "revision": "14ec99d9f8cc1e9e9edd991e27e2809bf7408e82",
+          "version": "0.0.1-alpha"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
