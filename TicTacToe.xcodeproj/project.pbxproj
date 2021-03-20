@@ -660,6 +660,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = be.dooz.TicTacToe;
 				PRODUCT_NAME = TicTacToe;
 				SDKROOT = iphoneos;
@@ -684,6 +685,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = be.dooz.TicTacToe;
 				PRODUCT_NAME = TicTacToe;
 				SDKROOT = iphoneos;
@@ -710,6 +712,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = be.dooz.TicTacToe;
 				PRODUCT_NAME = TicTacToe;
 				SDKROOT = macosx;
@@ -734,6 +737,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = be.dooz.TicTacToe;
 				PRODUCT_NAME = TicTacToe;
 				SDKROOT = macosx;

@@ -21,7 +21,7 @@ Folder structure like this:
 └─────┬─────────┘
     │ │
     │ │   ┌─────────────────────────────────────────────────────────────────────────────┐
-    │ └───│TicTacToe = https://github.com/kata-me/TicTacToeKit/releases/tag/1.O.0       │
+    │ └───│TicTacToe = https://github.com/kata-me/TicTacToeKit/releases/tag/1.1.0       │
     │     └─────────────────────────────────────────────────────────────────────────────┘
     │     ┌─────────────────────────────────────────────────────────────────────────────┐
     └─────│TicTacToeKit = https://github.com/kata-me/TicTacToe/releases/tag/1.0.0       │
