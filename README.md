@@ -28,8 +28,14 @@ Folder structure like this:
           └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+If you only want one project remove from `TicTacToe.xcodeproj` the reverence folder `TicTacToeKit` and xcode will check out using SPM depency management.
 
 ## Building
+
+Requirements are
+
+- macOS 11 or more
+- iOS 14.1 or more
 
 ```bash
 open TicTacToe/TicTacToe.xcodeproj/
@@ -39,11 +45,9 @@ Select scheme to run and target to run it on, and hit run.
 
 ### Testing
 
-In the same project select scheme and hit `cmd+u` to run all tests. To run only the logic tests from commandline.
+In the same project select scheme and hit `cmd+u` to run all tests. 
 
-```bash
-swift test --package-path TicTacToe/Shared/SharedPackage
-```
+To run only logic test (faster) select scheme `TicTacToeKit` and `cmd+u`.
 
 #### Setup pre-push hook
 
@@ -52,5 +56,5 @@ swift test --package-path TicTacToe/Shared/SharedPackage
 ⚠️ will overwrite whatever is in the pre-push, if you have a pre-push append rather then running this command.
 
 ```bash
-mv .git/hooks/pre-push.sample .git/hooks/pre-push && echo '#!/bin/bash' > .git/hooks/pre-push && echo 'swift test --package-path TicTacToe/Shared/SharedPackage' >> .git/hooks/pre-push
+mv .git/hooks/pre-push.sample .git/hooks/pre-push && echo '#!/bin/bash' > .git/hooks/pre-push && echo 'xcodebuild -scheme "TicTacToe (macOS)" test' >> .git/hooks/pre-push
 ```
