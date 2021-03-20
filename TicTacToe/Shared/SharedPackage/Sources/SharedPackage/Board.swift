@@ -3,9 +3,12 @@ import Combine
 
 public final class Board: ObservableObject {
     let mode: Mode
-    @Published public private(set) var isGameover: Bool
-    @Published public private(set) var isStarted: Bool
-    @Published public private(set) var winner: Square.OccupiedBy
+    @Published
+    public private(set) var isGameover: Bool
+    @Published
+    public private(set) var isStarted: Bool
+    @Published
+    public private(set) var winner: Square.OccupiedBy
     
     public let squares: [[Square]]
     let flatSquares: [Square]

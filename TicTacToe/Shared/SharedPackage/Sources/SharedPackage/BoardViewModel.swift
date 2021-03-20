@@ -5,13 +5,14 @@ import SwiftUI
 public final class BoardViewModel: ObservableObject {
     public static let noWinner = "no winner yet"
     public static let noWinnerColor = Color.black
+    public static let gameover = "gameover"
     
     public let board: Board
     
     @Published
-    public var winnerName: String = noWinner
+    public private(set) var winnerName: String = noWinner
     @Published
-    public var winnerColor: Color = noWinnerColor
+    public private(set) var winnerColor: Color = noWinnerColor
 
     private var cancelables: Set<AnyCancellable> = []
     
@@ -20,7 +21,7 @@ public final class BoardViewModel: ObservableObject {
         board.$winner.sink { [weak self] in
             switch $0 {
                 case .nobody:
-                    self?.winnerName = BoardViewModel.noWinner
+                    self?.winnerName = board.isGameover ?  BoardViewModel.gameover : BoardViewModel.noWinner
                     self?.winnerColor = BoardViewModel.noWinnerColor
                 case .visitor:
                     self?.winnerName = "green"
