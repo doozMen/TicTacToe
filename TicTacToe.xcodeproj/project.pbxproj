@@ -13,8 +13,6 @@
 		C01CD2EB2604B9CA003670C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C01CD2BF2604B9CA003670C4 /* Assets.xcassets */; };
 		C01EA1C32606390000ED72DF /* TicTacToeKit in Frameworks */ = {isa = PBXBuildFile; productRef = C01EA1C22606390000ED72DF /* TicTacToeKit */; };
 		C01EA1D22606394200ED72DF /* TicTacToeKit in Frameworks */ = {isa = PBXBuildFile; productRef = C01EA1D12606394200ED72DF /* TicTacToeKit */; };
-		C0BCFBDF260562A50008A047 /* TicTacToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */; };
-		C0BCFBE0260562A50008A047 /* TicTacToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +47,6 @@
 		C01CD2E52604B9CA003670C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C01EA1D726063A1D00ED72DF /* TicTacToeKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TicTacToeKit; path = ../TicTacToeKit; sourceTree = "<group>"; };
 		C01EA1DC26063A9B00ED72DF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +101,6 @@
 		C01CD2BC2604B9C9003670C4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				C0BCFBDE260562A50008A047 /* TicTacToeApp.swift */,
 				C01CD2BF2604B9CA003670C4 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -336,7 +332,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0BCFBDF260562A50008A047 /* TicTacToeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +339,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0BCFBE0260562A50008A047 /* TicTacToeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,7 +596,6 @@
 		C01CD2F52604B9CA003670C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWFDRU947Q;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
@@ -624,7 +617,6 @@
 		C01CD2F62604B9CA003670C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWFDRU947Q;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
@@ -647,7 +639,6 @@
 		C01CD2F82604B9CA003670C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = WWFDRU947Q;
@@ -669,7 +660,6 @@
 		C01CD2F92604B9CA003670C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = WWFDRU947Q;
