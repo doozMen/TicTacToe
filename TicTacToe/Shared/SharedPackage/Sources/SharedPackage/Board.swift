@@ -37,14 +37,27 @@ final class Board: ObservableObject {
     /// Allows to play against AI
     /// - Returns: indexPath the visitor will occupy
     func visitorRandomMove() -> IndexPath {
+        var section = Int.random(in: 0..<3)
+        var item = Int.random(in: 0..<3)
+        while isOccupied(at: .init(item: item, section: section)) && !isGameover {
+            section = Int.random(in: 0..<3)
+            item = Int.random(in: 0..<3)
+        }
+        do {
+            try occupy(at: .init(item: item, section: section), with: .visitor)
+        } catch {
+            assertionFailure("This should not happen, \(error) in \(#function), \(#filePath)")
+            // can safly be ignored as the random above check that values are correct
+        }
         return .init(item: 0, section: 0)
     }
+    
     func occupy(at indexPath: IndexPath, with player: Square.OccupiedBy) throws {
         guard indexPath.item < 3, indexPath.section < 3 else {
             throw Error.invalid(indexPath: indexPath, function: #function, filePath: #filePath)
         }
-        let occupation = squares[indexPath.section][indexPath.item].occupiedBy
-        guard occupation == .nobody else {
+        
+        guard !isOccupied(at: indexPath) else {
             throw Error.cannotChangeOccupiedSquare(indexPath: indexPath, occupiedBy: player, function: #function, filePath: #filePath)
         }
         squares[indexPath.section][indexPath.item].occupiedBy = player
