@@ -16,6 +16,12 @@ let package = Package(
     targets: [
         .target(
             name: "SharedPackage",
-            dependencies: []),
+            dependencies: []
+        ),
+        .testTarget(
+            name: "SharedPackageTests",
+            dependencies: ["SharedPackage"],
+            exclude: ["Info.plist"]
+        )
     ]
 )
