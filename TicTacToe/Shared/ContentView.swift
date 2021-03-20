@@ -9,6 +9,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             HStack {
                 Text(boardViewModel.winnerName)
                     .font(.title)
@@ -16,7 +17,8 @@ struct ContentView: View {
                 Spacer()
                 Button("Reset") {
                     boardViewModel.board.resetGame()
-                }.padding()
+                }
+                .padding()
             }.padding()
             Divider()
             HStack {
@@ -36,11 +38,13 @@ struct ContentView: View {
                     createSquare(item: 2, section: 2)
                 }.padding()
             }.padding()
+            Spacer()
         }
         .background(winnerColor)
         .onReceive(boardViewModel.$winnerColor, perform: { color in
             self.winnerColor = color.opacity(0.2)
         })
+        .ignoresSafeArea()
     }
 }
 
