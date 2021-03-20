@@ -54,8 +54,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C09C55602604E2AC002F642B"
-               BuildableName = "TestsSharedPackage.xctest"
-               BlueprintName = "TestsSharedPackage"
+               BuildableName = "SharedPackageTests.xctest"
+               BlueprintName = "SharedPackageTests"
                ReferencedContainer = "container:TicTacToe.xcodeproj">
             </BuildableReference>
          </TestableReference>

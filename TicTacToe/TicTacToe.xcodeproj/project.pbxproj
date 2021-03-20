@@ -48,7 +48,7 @@
 		C01CD2E32604B9CA003670C4 /* Tests_launch_performance_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_launch_performance_macOS.swift; sourceTree = "<group>"; };
 		C01CD2E52604B9CA003670C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C09C55382604E1C8002F642B /* SharedPackage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SharedPackage; sourceTree = "<group>"; };
-		C09C55612604E2AC002F642B /* TestsSharedPackage.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestsSharedPackage.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C09C55612604E2AC002F642B /* SharedPackageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedPackageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09C55632604E2AC002F642B /* TestsSharedPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsSharedPackage.swift; sourceTree = "<group>"; };
 		C09C55652604E2AC002F642B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +105,7 @@
 				C01CD2BC2604B9C9003670C4 /* Shared */,
 				C01CD2D72604B9CA003670C4 /* Tests iOS */,
 				C01CD2E22604B9CA003670C4 /* Tests macOS */,
-				C09C55622604E2AC002F642B /* TestsSharedPackage */,
+				C09C55622604E2AC002F642B /* SharedPackageTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,7 +125,7 @@
 				C01CD2CC2604B9CA003670C4 /* TicTacToe.app */,
 				C01CD2D42604B9CA003670C4 /* Tests iOS.xctest */,
 				C01CD2DF2604B9CA003670C4 /* Tests macOS.xctest */,
-				C09C55612604E2AC002F642B /* TestsSharedPackage.xctest */,
+				C09C55612604E2AC002F642B /* SharedPackageTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,14 +172,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C09C55622604E2AC002F642B /* TestsSharedPackage */ = {
+		C09C55622604E2AC002F642B /* SharedPackageTests */ = {
 			isa = PBXGroup;
 			children = (
 				C09C55632604E2AC002F642B /* TestsSharedPackage.swift */,
 				C09C55652604E2AC002F642B /* Info.plist */,
 			);
-			name = TestsSharedPackage;
-			path = Shared/SharedPackage/Tests/TestsSharedPackage;
+			name = SharedPackageTests;
+			path = Shared/SharedPackage/Tests/SharedPackageTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +267,9 @@
 			productReference = C01CD2DF2604B9CA003670C4 /* Tests macOS.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		C09C55602604E2AC002F642B /* TestsSharedPackage */ = {
+		C09C55602604E2AC002F642B /* SharedPackageTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C09C55682604E2AC002F642B /* Build configuration list for PBXNativeTarget "TestsSharedPackage" */;
+			buildConfigurationList = C09C55682604E2AC002F642B /* Build configuration list for PBXNativeTarget "SharedPackageTests" */;
 			buildPhases = (
 				C09C555D2604E2AC002F642B /* Sources */,
 				C09C555E2604E2AC002F642B /* Frameworks */,
@@ -280,12 +280,12 @@
 			dependencies = (
 				C09C55712604E2CC002F642B /* PBXTargetDependency */,
 			);
-			name = TestsSharedPackage;
+			name = SharedPackageTests;
 			packageProductDependencies = (
 				C09C55722604E2CF002F642B /* SharedPackage */,
 			);
 			productName = TestsSharedPackage;
-			productReference = C09C55612604E2AC002F642B /* TestsSharedPackage.xctest */;
+			productReference = C09C55612604E2AC002F642B /* SharedPackageTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -335,7 +335,7 @@
 				C01CD2CB2604B9CA003670C4 /* TicTacToe (macOS) */,
 				C01CD2D32604B9CA003670C4 /* Tests iOS */,
 				C01CD2DE2604B9CA003670C4 /* Tests macOS */,
-				C09C55602604E2AC002F642B /* TestsSharedPackage */,
+				C09C55602604E2AC002F642B /* SharedPackageTests */,
 			);
 		};
 /* End PBXProject section */
@@ -828,7 +828,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C09C55682604E2AC002F642B /* Build configuration list for PBXNativeTarget "TestsSharedPackage" */ = {
+		C09C55682604E2AC002F642B /* Build configuration list for PBXNativeTarget "SharedPackageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C09C55692604E2AC002F642B /* Debug */,
