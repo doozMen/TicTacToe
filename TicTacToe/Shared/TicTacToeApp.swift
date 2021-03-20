@@ -1,4 +1,5 @@
 import SwiftUI
+import SharedPackage
 
 @main
 struct TicTacToeApp: App {
