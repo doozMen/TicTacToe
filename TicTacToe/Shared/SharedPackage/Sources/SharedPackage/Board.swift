@@ -1,17 +1,13 @@
 import Foundation
 import Combine
 
-final class Board: ObservableObject {
-    enum Mode {
-        case multiplayer, ai
-    }
-    
+public final class Board: ObservableObject {
     let mode: Mode
-    @Published private(set) var isGameover: Bool
-    @Published private(set) var isStarted: Bool
-    @Published private(set) var winner: Square.OccupiedBy
+    @Published public private(set) var isGameover: Bool
+    @Published public private(set) var isStarted: Bool
+    @Published public private(set) var winner: Square.OccupiedBy
     
-    let squares: [[Square]]
+    public let squares: [[Square]]
     let flatSquares: [Square]
     
     /// This matrix is used to find indexes to check all
@@ -27,7 +23,7 @@ final class Board: ObservableObject {
         [2, 4, 6]  // 7 Check second Diagonal
     ]
     
-    init(mode: Mode = .multiplayer) {
+    public init(mode: Mode = .multiplayer) {
         self.mode = mode
         self.squares = [
             [.init(.nobody), .init(.nobody), .init(.nobody)],
@@ -43,7 +39,7 @@ final class Board: ObservableObject {
     /// Allows to play against AI
     /// - Returns: indexPath the visitor will occupy
     @discardableResult
-    func visitorRandomMove() -> IndexPath {
+    public func visitorRandomMove() -> IndexPath {
         var section = Int.random(in: 0..<3)
         var item = Int.random(in: 0..<3)
         
@@ -56,7 +52,7 @@ final class Board: ObservableObject {
         return IndexPath(item: item, section: section)
     }
     
-    func occupy(at indexPath: IndexPath, with player: Square.OccupiedBy) throws {
+    public func occupy(at indexPath: IndexPath, with player: Square.OccupiedBy) throws {
         guard indexPath.item < 3, indexPath.section < 3 else {
             throw Error.invalid(indexPath: indexPath, function: #function, filePath: #filePath)
         }
@@ -82,7 +78,7 @@ final class Board: ObservableObject {
         return squares[indexPath.section][indexPath.item].occupiedBy != .nobody
     }
     
-    func resetGame() {
+    public func resetGame() {
         for section in 0...2 {
             for item  in 0...2 {
                 squares[section][item].occupiedBy = .nobody
@@ -141,6 +137,10 @@ final class Board: ObservableObject {
         isStarted = flatSquares.contains(.init(.home)) || flatSquares.contains(.init(.visitor))
         winner = checkForWinner()
     }
-    
+}
 
+public extension Board {
+    enum Mode {
+        case multiplayer, ai
+    }
 }

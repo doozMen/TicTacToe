@@ -1,5 +1,6 @@
 import Foundation
 import XCTest
+import SwiftUI
 @testable import SharedPackage
 
 final class BoardViewModelTests: XCTestCase {
@@ -12,7 +13,7 @@ final class BoardViewModelTests: XCTestCase {
     
     func test_reset() throws {
         try makeAWinningRow(in: viewModel.board, section: 0, candidate: .home)
-        XCTAssertEqual(viewModel.winnerName, "home")
+        XCTAssertEqual(viewModel.winnerName, "blue")
         viewModel.board.resetGame()
         XCTAssertEqual(viewModel.winnerName, BoardViewModel.noWinner)
     }
@@ -21,7 +22,8 @@ final class BoardViewModelTests: XCTestCase {
        
         try makeAWinningRow(in: viewModel.board, section: 0, candidate: .home)
         
-        XCTAssertEqual(viewModel.winnerName, "home")
+        XCTAssertEqual(viewModel.winnerName, "blue")
+        XCTAssertEqual(viewModel.winnerColor, Color.blue)
     }
     
     func test_visitor_plays_random() throws {
